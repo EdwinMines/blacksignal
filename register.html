@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0b0b">
-  <meta name="description" content="Регистрация на сюжетное событие «Чёрный сигнал» на сервере Legacy.">
+  <meta name="description" content="Регистрация на масштабное событие «Чёрный сигнал» на сервере Legacy EVENTS.">
   <title>Регистрация — Чёрный сигнал</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -34,9 +34,9 @@
         <div class="registration-copy">
           <p>Заполните анкету участника. Ответы сохраняются через Google Forms, а распределение ролей будет опубликовано организаторами перед событием.</p>
           <dl>
-            <div><dt>Сервер</dt><dd>Legacy</dd></div>
+            <div><dt>Сервер</dt><dd>Legacy EVENTS</dd></div>
             <div><dt>Дата</dt><dd>10.10.2026</dd></div>
-            <div><dt>Формат</dt><dd>Сюжетный рейд</dd></div>
+            <div><dt>Формат</dt><dd>Масштабный ивент</dd></div>
           </dl>
         </div>
       </div>
@@ -44,20 +44,22 @@
 
     <section class="registration-section">
       <div class="shell form-shell">
-        <div class="form-status">
-          <span>REGISTRATION_CHANNEL</span>
-          <strong>CONNECTED</strong>
+        <div class="registration-card">
+          <div class="form-status">
+            <span>REGISTRATION_CHANNEL</span>
+            <strong>READY</strong>
+          </div>
+          <div class="registration-card__body">
+            <p class="section-code">Внешний защищённый канал</p>
+            <h2>Анкета участника</h2>
+            <p>Регистрация проходит через Google Forms. Анкета откроется в новой вкладке, а этот сайт останется открытым.</p>
+            <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">Открыть анкету <span>↗</span></a>
+          </div>
         </div>
-        <iframe
-          class="registration-frame"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform?embedded=true"
-          title="Форма регистрации на событие «Чёрный сигнал»"
-          loading="eager">Загрузка формы…</iframe>
-        <p class="form-fallback">Если форма не загрузилась, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">откройте её в отдельной вкладке ↗</a>.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell"><span>BLACK SIGNAL // LEGACY</span><span>Канал регистрации // Google Forms</span></div></footer>
+  <footer class="site-footer"><div class="shell"><span>BLACK SIGNAL // LEGACY EVENTS</span><span>Канал регистрации // Google Forms</span></div></footer>
 </body>
 </html>

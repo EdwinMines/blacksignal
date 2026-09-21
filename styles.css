@@ -704,54 +704,6 @@ a {
   border-top: 1px solid var(--line);
 }
 
-.story-image {
-  position: relative;
-  margin-bottom: 20px;
-  overflow: hidden;
-  border: 1px solid var(--line-strong);
-  background: var(--panel);
-}
-
-.story-image-overlap {
-  margin-top: -44px;
-  z-index: 3;
-}
-
-.story-image img {
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  filter: saturate(.78) contrast(1.04);
-}
-
-.story-image::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(8,9,9,.88));
-  content: "";
-  pointer-events: none;
-}
-
-.story-image figcaption {
-  position: absolute;
-  right: 24px;
-  bottom: 20px;
-  left: 24px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  color: #c8cbc5;
-  font: 600 12px/1.5 var(--mono);
-}
-
-.story-image figcaption span {
-  color: var(--accent-bright);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
 .dossier {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -869,6 +821,10 @@ a {
   color: var(--muted);
 }
 
+.feature-grid {
+  margin-top: 50px;
+}
+
 .phase-list {
   display: grid;
   gap: 0;
@@ -903,7 +859,7 @@ a {
 
 .info-board {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--line);
 }
 
@@ -914,11 +870,11 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
-.info-cell:nth-child(4n) {
+.info-cell:nth-child(3n) {
   border-right: 0;
 }
 
-.info-cell:nth-last-child(-n+4) {
+.info-cell:nth-last-child(-n+3) {
   border-bottom: 0;
 }
 
@@ -1091,7 +1047,6 @@ a {
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--line);
-  border-bottom: 0;
   background: var(--panel);
   font: 700 10px var(--mono);
   letter-spacing: .08em;
@@ -1105,23 +1060,39 @@ a {
   color: var(--green);
 }
 
-.registration-frame {
-  display: block;
-  width: 100%;
-  height: 1180px;
-  border: 1px solid var(--line);
-  background: #f5f3ef;
+.registration-card {
+  border: 1px solid var(--line-strong);
+  background: rgba(16,18,18,.76);
 }
 
-.form-fallback {
-  margin: 16px 0 0;
-  color: var(--muted);
-  font-size: 14px;
+.registration-card .form-status {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.registration-card__body {
+  padding: clamp(38px, 7vw, 76px);
   text-align: center;
 }
 
-.form-fallback a {
-  color: var(--accent-bright);
+.registration-card__body h2 {
+  margin: 15px 0 18px;
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
+  line-height: .9;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.registration-card__body > p:not(.section-code) {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.registration-card__body .button {
+  width: auto;
+  min-width: 250px;
 }
 
 .wip-page {
@@ -1291,9 +1262,9 @@ a {
     margin-inline: 0;
   }
 
-  .info-cell:nth-child(4n) { border-right: 1px solid var(--line); }
+  .info-cell:nth-child(3n) { border-right: 1px solid var(--line); }
   .info-cell:nth-child(2n) { border-right: 0; }
-  .info-cell:nth-last-child(-n+4) { border-bottom: 1px solid var(--line); }
+  .info-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
   .info-cell:nth-last-child(-n+2) { border-bottom: 0; }
 }
 
@@ -1393,7 +1364,7 @@ a {
 
   .article-block:nth-last-child(-n+2),
   .brief-card:nth-last-child(-n+2),
-  .info-cell:nth-last-child(-n+2) {
+  .info-cell:nth-last-child(-n+3) {
     border-bottom: 1px solid var(--line);
   }
 
@@ -1426,29 +1397,6 @@ a {
     font-size: clamp(3.4rem, 17vw, 5.3rem);
   }
 
-  .story-image {
-    width: 100%;
-    border-inline: 0;
-  }
-
-  .story-image-overlap {
-    margin-top: 0;
-  }
-
-  .story-image img {
-    aspect-ratio: 4 / 3;
-  }
-
-  .story-image figcaption {
-    right: 16px;
-    bottom: 14px;
-    left: 16px;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 10px;
-  }
-
   .registration-head {
     padding: 130px 0 64px;
   }
@@ -1474,9 +1422,12 @@ a {
     width: 100%;
   }
 
-  .registration-frame {
-    height: 1260px;
+  .registration-card {
     border-inline: 0;
+  }
+
+  .registration-card__body .button {
+    width: 100%;
   }
 }
 
