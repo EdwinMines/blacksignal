@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0b">
+  <meta name="description" content="«Чёрный сигнал» — сюжетный рейд в SCP: Secret Laboratory на сервере Legacy.">
+  <title>Чёрный сигнал — SCP:SL на Legacy</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Чёрный сигнал — главная">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>BLACK SIGNAL</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+      <span class="sr-only">Открыть меню</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <a class="is-active" href="index.html">Главная</a>
+      <a href="factions.html">Группировки</a>
+      <a href="briefing.html">Брифинг</a>
+      <a href="info.html">Информация</a>
+      <a href="signals.html">Сигналы</a>
+      <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">Регистрация</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <img class="hero-image" src="assets/black-signal-hero.png" alt="" fetchpriority="high">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-content shell">
+        <p class="eyebrow"><span class="status-dot"></span> Передача 02:17 // Канал 12</p>
+        <h1>Чёрный<br><em>сигнал</em></h1>
+        <p class="hero-lead">Все отключённые передатчики карантинной зоны одновременно вышли в эфир. Ни голоса. Ни координат. Только идентификатор объекта, уничтоженного одиннадцать месяцев назад.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">Подать заявку <span>↗</span></a>
+          <a class="button button-ghost" href="briefing.html">Открыть брифинг <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-meta shell" aria-label="Основные данные события">
+        <div><span>Сервер</span><strong>Legacy</strong></div>
+        <div><span>Игра</span><strong>SCP: Secret Laboratory</strong></div>
+        <div><span>Дата</span><strong>10.10.2026</strong></div>
+        <div><span>Формат</span><strong>Сюжетный рейд</strong></div>
+      </div>
+    </section>
+
+    <section class="countdown-section" aria-labelledby="countdown-title">
+      <div class="shell countdown-layout">
+        <div>
+          <p class="section-code">Операция // Москва</p>
+          <h2 id="countdown-title">До открытия периметра</h2>
+        </div>
+        <div class="countdown" data-countdown="2026-10-09T21:00:00Z" aria-live="polite">
+          <div><strong data-unit="days">00</strong><span>дней</span></div>
+          <div><strong data-unit="hours">00</strong><span>часов</span></div>
+          <div><strong data-unit="minutes">00</strong><span>минут</span></div>
+          <div><strong data-unit="seconds">00</strong><span>секунд</span></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="transmission" aria-label="Перехваченная передача">
+      <div class="shell transmission-inner">
+        <span class="transmission-label">Перехват 12-00</span>
+        <p>Три группы движутся к источнику. Каждой назвали свою причину. <strong>Ни одной не сказали правду.</strong></p>
+        <span class="waveform" aria-hidden="true"></span>
+      </div>
+    </aside>
+
+    <section class="section shell situation">
+      <div class="section-heading">
+        <p class="section-code">01 // Обстановка</p>
+        <h2>Зона «Велеска»</h2>
+      </div>
+      <div class="situation-copy">
+        <p class="lead">После беспорядков, обрушения инфраструктуры и засекреченного инцидента промышленная зона Велески была закрыта. Эвакуация заняла шесть часов.</p>
+        <p><strong>Документы лгут.</strong> В руинах остались склады, лаборатории, узлы связи — и те, кто отказался уходить. Теперь повторяющийся сигнал ведёт всех к ретранслятору № 12.</p>
+      </div>
+      <dl class="data-grid">
+        <div><dt>Сектор</dt><dd>Велеска / промзона</dd></div>
+        <div><dt>Периметр</dt><dd>Закрыт</dd></div>
+        <div><dt>Связь</dt><dd class="alert">Нестабильна</dd></div>
+        <div><dt>Приоритет</dt><dd class="alert">Ретранслятор 12</dd></div>
+      </dl>
+    </section>
+
+    <section class="section factions-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-code">02 // Стороны конфликта</p>
+            <h2>Три версии.<br>Одна зона.</h2>
+          </div>
+          <p>Открытые сведения не объясняют, зачем каждая группа прибыла к периметру. Они лишь показывают, кому предстоит столкнуться внутри.</p>
+        </div>
+
+        <div class="faction-grid">
+          <article class="faction-card faction-aegis">
+            <div class="faction-index">01</div>
+            <img src="assets/faction-aegis-icon.png" alt="Эмблема Aegis Response">
+            <p class="section-code">Корпоративный подрядчик</p>
+            <h3>Aegis Response</h3>
+            <p>Группа реагирования, связанная с охраной критической инфраструктуры и техническими эвакуациями на закрытых объектах.</p>
+            <a href="factions.html#aegis">Открыть публичное досье <span>→</span></a>
+          </article>
+          <article class="faction-card faction-morrow">
+            <div class="faction-index">02</div>
+            <img src="assets/faction-morrow-icon.png" alt="Эмблема Morrow Solutions">
+            <p class="section-code">Статус не подтверждён</p>
+            <h3>Morrow Solutions</h3>
+            <p>Название, которое появляется в документах исчезнувших подрядчиков. Единой зарегистрированной организации обнаружить не удалось.</p>
+            <a href="factions.html#morrow">Открыть публичное досье <span>→</span></a>
+          </article>
+          <article class="faction-card faction-brodyagi">
+            <div class="faction-index">03</div>
+            <img src="assets/faction-brodyagi-icon.png" alt="Эмблема Бродяг">
+            <p class="section-code">Местные выжившие</p>
+            <h3>Бродяги</h3>
+            <p>Сеть небольших общин внутри зоны. Их следами считают самодельные ретрансляторы и метки у технических входов.</p>
+            <a href="factions.html#brodyagi">Открыть публичное досье <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell protocol">
+      <div class="section-heading">
+        <p class="section-code">03 // Протокол рейда</p>
+        <h2>Войти. Найти. Вынести.</h2>
+      </div>
+      <ol class="protocol-list">
+        <li><span>01</span><div><h3>Вход</h3><p>Пересечь периметр и закрепиться в секторе.</p></div></li>
+        <li><span>02</span><div><h3>Поиск</h3><p>Найти пропуска, ресурсы и фрагменты передачи.</p></div></li>
+        <li><span>03</span><div><h3>Контакт</h3><p>Заключать временные союзы — или нарушать их.</p></div></li>
+        <li><span>04</span><div><h3>Выход</h3><p>Добраться до активной точки эвакуации.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell final-cta-inner">
+        <div>
+          <p class="section-code">Допуск в зону</p>
+          <h2>Следующая передача<br>может быть последней.</h2>
+        </div>
+        <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">Регистрация <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <span>BLACK SIGNAL // LEGACY</span>
+      <span>Неофициальное игровое событие в SCP:SL</span>
+    </div>
+  </footer>
+</body>
+</html>
