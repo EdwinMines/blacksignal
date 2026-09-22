@@ -29,6 +29,73 @@
     });
   }
 
+  const revealSelectors = {
+    home: [
+      ".transmission-label",
+      ".transmission p",
+      ".situation .section-heading > *",
+      ".situation-copy > *",
+      ".data-grid > div > *",
+      ".factions-section .section-code",
+      ".factions-section h2",
+      ".factions-section .split-heading > p",
+      ".faction-card > h3",
+      ".faction-card > p:not(.section-code)",
+      ".faction-card > a",
+      ".protocol .section-heading > *",
+      ".protocol-list > li",
+      ".final-cta .section-code",
+      ".final-cta h2"
+    ],
+    factions: [
+      ".dossier-number",
+      ".dossier-body > .section-code",
+      ".dossier-body > h2",
+      ".dossier-intro",
+      ".article-block > *",
+      ".notice p",
+      ".final-cta .section-code",
+      ".final-cta h2"
+    ],
+    info: [
+      ".content-section > .shell > .section-code",
+      ".info-cell > *",
+      ".section-heading > *",
+      ".brief-card > *",
+      ".final-cta .section-code",
+      ".final-cta h2"
+    ]
+  };
+
+  const selectors = revealSelectors[page?.dataset.page];
+  if (selectors) {
+    const revealElements = Array.from(document.querySelectorAll(selectors.join(",")));
+
+    revealElements.forEach((element) => {
+      element.classList.add("reveal-copy");
+      if (element.matches("h2, h3")) element.classList.add("reveal-title");
+
+      const siblings = Array.from(element.parentElement?.children || [])
+        .filter((sibling) => revealElements.includes(sibling));
+      const siblingIndex = Math.max(0, siblings.indexOf(element));
+      element.style.setProperty("--reveal-delay", `${Math.min(siblingIndex * 75, 300)}ms`);
+    });
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: .12, rootMargin: "0px 0px -7%" });
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+  }
+
   const countdown = document.querySelector("[data-countdown]");
   if (!countdown) return;
 
