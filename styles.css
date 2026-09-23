@@ -599,6 +599,60 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
   color: var(--accent-bright);
 }
 
+.corporate-record {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 190px 1fr;
+  margin-top: 28px;
+  border: 1px solid rgba(38,150,139,.34);
+  background:
+    linear-gradient(120deg, rgba(17,104,99,.12), transparent 58%),
+    rgba(255,255,255,.012);
+}
+
+.corporate-record__mark {
+  display: flex;
+  min-height: 190px;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(38,150,139,.28);
+  background: #d9ddd6;
+}
+
+.corporate-record__mark img {
+  width: 142px;
+  height: 142px;
+  object-fit: contain;
+}
+
+.corporate-record__body {
+  padding: 30px 34px;
+}
+
+.corporate-record__body h3 {
+  margin: 9px 0 13px;
+  font-size: 31px;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
+.corporate-record__body > p:not(.section-code) {
+  max-width: 850px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.corporate-record__body > span {
+  display: block;
+  margin-top: 18px;
+  color: #71b5aa;
+  font: 700 10px/1.5 var(--mono);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
 .factions-section {
   border-block: 1px solid var(--line);
   background: #0c0e0e;
@@ -890,6 +944,23 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
 
 .notice p {
   margin: 0;
+}
+
+.corporate-notice {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  align-items: center;
+  gap: 26px;
+  border-color: rgba(38,150,139,.34);
+  background: rgba(17,104,99,.08);
+}
+
+.corporate-notice img {
+  width: 82px;
+  height: 82px;
+  padding: 8px;
+  object-fit: contain;
+  background: #d9ddd6;
 }
 
 .brief-grid {
@@ -1516,6 +1587,19 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
     gap: 45px;
   }
 
+  .corporate-record {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .corporate-record__mark {
+    min-height: 170px;
+  }
+
+  .corporate-record__mark img {
+    width: 118px;
+    height: 118px;
+  }
+
   .countdown-layout {
     padding-block: 58px;
     gap: 34px;
@@ -1658,6 +1742,26 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
   .brief-grid,
   .info-board {
     grid-template-columns: 1fr;
+  }
+
+  .corporate-record,
+  .corporate-notice {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-record__mark {
+    min-height: 150px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(38,150,139,.28);
+  }
+
+  .corporate-record__body {
+    padding: 26px 24px;
+  }
+
+  .corporate-notice img {
+    width: 92px;
+    height: 92px;
   }
 
   .data-grid div,

@@ -36,6 +36,7 @@
       ".situation .section-heading > *",
       ".situation-copy > *",
       ".data-grid > div > *",
+      ".corporate-record__body > *",
       ".factions-section .section-code",
       ".factions-section h2",
       ".factions-section .split-heading > p",
@@ -53,7 +54,7 @@
       ".dossier-body > h2",
       ".dossier-intro",
       ".article-block > *",
-      ".notice p",
+      ".notice > *",
       ".final-cta .section-code",
       ".final-cta h2"
     ],
