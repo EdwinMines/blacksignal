@@ -1069,6 +1069,10 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
 
 .fit-note p {
   margin: 8px 0 0;
+  color: #d5d8d2;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .side-action {
