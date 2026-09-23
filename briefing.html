@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0b0b">
-  <meta name="description" content="Публичный брифинг события «Чёрный сигнал» на сервере Legacy EVENTS.">
+  <meta name="description" content="Выбор стороны в событии «Чёрный сигнал»: подготовленные PMC или выживающие в зоне Бродяги.">
   <title>Брифинг — Чёрный сигнал</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -23,54 +23,84 @@
   <main id="main">
     <section class="page-hero">
       <div class="shell">
-        <p class="eyebrow">Публичный брифинг // Чёрный сигнал</p>
-        <h1>Что нужно знать<br>перед стартом</h1>
-        <p class="page-lead">Во время ивента вы будете играть за одну из трёх группировок. У каждой — своя точка старта, свои сведения и причины войти в изолированный сектор. Остальное придётся выяснять уже по ходу игры.</p>
+        <p class="eyebrow">Выбор стороны // Публичный брифинг</p>
+        <h1>Какую сторону<br>выберешь ты?</h1>
+        <p class="page-lead">В «Чёрном сигнале» нет одной правильной роли. PMC входят в зону подготовленными и рискуют купленным комплектом. Бродяги обходятся без корпоративной поддержки и превращают любую находку в шанс пережить следующую встречу.</p>
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section side-selection" aria-labelledby="side-selection-title">
       <div class="shell">
         <div class="section-heading">
-          <p class="section-code">Система вылазки // Deployment</p>
-          <h2>Собери комплект. Вернись с добычей.</h2>
+          <p class="section-code">Два подхода // Одна зона</p>
+          <h2 id="side-selection-title">Кем ты войдёшь в Велеску?</h2>
         </div>
-        <div class="notice" style="margin-top:40px"><p>Система заменяет обычную выдачу вещей полноценной подготовкой к вылазке. PMC закупают снаряжение и формируют отряды через терминал. У Диких нет доступа к корпоративному каталогу — они полагаются на найденную добычу, обмен и торговцев.</p></div>
-        <div class="brief-grid" style="margin-top:24px">
-          <article class="brief-card"><p class="section-code">01 // Подготовка</p><h3>Снаряжение выбираете вы</h3><p>Перед выходом бойцы PMC собирают комплект в личном терминале. Покупки оплачиваются из бюджета компании и личных средств.</p></article>
-          <article class="brief-card"><p class="section-code">02 // Отряд</p><h3>До четырёх бойцов</h3><p>Командир приглашает участников, каждый готовит собственный комплект, а затем весь отряд отправляется в сектор вместе.</p></article>
-          <article class="brief-card"><p class="section-code">03 // Инвентарь</p><h3>Унести всё не получится</h3><p>Вес и место ограничены. Рюкзаки и разгрузки увеличивают вместимость, но каждый лишний предмет занимает ценный слот.</p></article>
-          <article class="brief-card"><p class="section-code">04 // Полевой КПК</p><h3>Следите за состоянием</h3><p>КПК показывает ранения конечностей, кровопотерю, переломы, голод, жажду и воздействие холода. Припасы можно использовать прямо из инвентаря.</p></article>
-          <article class="brief-card"><p class="section-code">05 // Добыча</p><h3>Ищите, чините, торгуйте</h3><p>В тайниках лежат припасы и ценности. Инструменты пригодятся для генераторов и ретрансляторов, а торговцы по-разному оценивают найденные товары.</p></article>
-          <article class="brief-card"><p class="section-code">06 // Эвакуация</p><h3>Добычу нужно вывезти</h3><p>PMC могут взять аварийный транспондер и вызвать эвакуацию на поверхности. Всё, что удастся вынести, вернётся в ваш схрон.</p></article>
+        <div class="side-choice-grid">
+          <article class="side-choice side-choice--pmc">
+            <div class="side-choice__top">
+              <div class="side-emblems" aria-hidden="true">
+                <img src="assets/faction-aegis-icon.png" alt="">
+                <img src="assets/faction-morrow-icon.png" alt="">
+              </div>
+              <div><p class="section-code">Сторона 01 // PMC</p><span class="side-roster">Aegis Response / Morrow Solutions</span></div>
+            </div>
+            <h2>Подготовься.<br>Выполни контракт.</h2>
+            <p class="side-intro">PMC полагаются на снаряжение, дисциплину и работу небольшого отряда. Вы заранее решаете, чем рисковать, а затем пытаетесь вернуть вложения вместе с добычей.</p>
+            <ol class="gameplay-loop">
+              <li><span>01</span><div><strong>Собери комплект</strong><p>Закупи оружие, медицину, припасы и инструменты через терминал, используя бюджет компании и личные средства.</p></div></li>
+              <li><span>02</span><div><strong>Сформируй группу</strong><p>Объединись в отряд до четырёх бойцов. Каждый отвечает за свой комплект и готовность к выходу.</p></div></li>
+              <li><span>03</span><div><strong>Работай по плану</strong><p>Следи за состоянием через полевой КПК, распределяй ресурсы и решай, когда продолжать операцию, а когда отступить.</p></div></li>
+              <li><span>04</span><div><strong>Запроси эвакуацию</strong><p>Аварийный транспондер позволяет вызвать транспорт на поверхности и вывести находящихся рядом бойцов своей стороны.</p></div></li>
+            </ol>
+            <div class="fit-note"><span>Твой выбор, если</span><p>тебе нравятся подготовка, командная игра и риск дорогим снаряжением.</p></div>
+            <a class="side-action" href="factions.html#aegis">Изучить досье PMC <span>→</span></a>
+          </article>
+
+          <article class="side-choice side-choice--scav">
+            <div class="side-choice__top">
+              <div class="side-emblems side-emblems--single" aria-hidden="true">
+                <img src="assets/faction-brodyagi-icon.png" alt="">
+              </div>
+              <div><p class="section-code">Сторона 02 // Scavengers</p><span class="side-roster">Бродяги / Дикие</span></div>
+            </div>
+            <h2>Найди.<br>Обмени. Переживи.</h2>
+            <p class="side-intro">Бродяги не пользуются корпоративным каталогом и не входят в зону с готовым планом. Их преимущество — свобода действий, добыча и умение превращать чужие потери в собственный шанс.</p>
+            <ol class="gameplay-loop">
+              <li><span>01</span><div><strong>Ищи полезное</strong><p>Обыскивай тайники и собирай всё, что можно использовать, продать или обменять на более нужную вещь.</p></div></li>
+              <li><span>02</span><div><strong>Торгуй с умом</strong><p>Снабженец, механик и посредник интересуются разными товарами. Правильному покупателю находка стоит дороже.</p></div></li>
+              <li><span>03</span><div><strong>Импровизируй</strong><p>Твой маршрут зависит от того, что удалось найти. Иногда ценнее оружия окажутся инструменты, сведения или чужое доверие.</p></div></li>
+              <li><span>04</span><div><strong>Выбирай момент</strong><p>Договаривайся, устраивай засады или избегай боя. Бродяга сам решает, какой риск сегодня оправдан.</p></div></li>
+            </ol>
+            <div class="fit-note"><span>Твой выбор, если</span><p>тебе нравятся импровизация, торговля и непредсказуемая игра от найденной добычи.</p></div>
+            <a class="side-action" href="factions.html#brodyagi">Изучить досье Бродяг <span>→</span></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="content-section">
-      <div class="shell two-column">
-        <div>
-          <p class="section-code">Перед началом события</p>
-          <h2 style="font-size:clamp(2.4rem,5vw,4.8rem);line-height:.95;text-transform:uppercase">Что важно помнить</h2>
+    <section class="content-section common-brief">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-code">Общее для обеих сторон</p>
+          <h2>Зона не делает исключений</h2>
         </div>
-        <ul class="clean-list">
-          <li>Не публикуйте закрытый брифинг своей группировки до окончания события.</li>
-          <li>Не уничтожайте и не выбрасывайте намеренно предметы, отмеченные как сюжетные.</li>
-          <li>Договорённости между группами можно нарушить — доверять или нет, решаете вы.</li>
-          <li>Сообщения организаторов и изменения на карте могут быть частью происходящего.</li>
-          <li>Если особое правило не объявлено, действуют обычные правила Legacy EVENTS.</li>
-        </ul>
+        <div class="brief-grid feature-grid">
+          <article class="brief-card"><p class="section-code">01 // Состояние</p><h3>Ранения имеют последствия</h3><p>Кровотечение, переломы, голод, жажда и холод меняют возможности персонажа и требуют подходящих припасов.</p></article>
+          <article class="brief-card"><p class="section-code">02 // Груз</p><h3>Всё не унести</h3><p>Инвентарь и допустимый вес ограничены. Каждая полезная вещь конкурирует за место с медициной, едой и боеприпасами.</p></article>
+          <article class="brief-card"><p class="section-code">03 // Контакт</p><h3>Союзы ничего не гарантируют</h3><p>Можно обмениваться ресурсами и информацией, но ни одна договорённость не защищена от предательства.</p></article>
+          <article class="brief-card"><p class="section-code">04 // История</p><h3>Решения остаются в игре</h3><p>Найденные предметы, выполненные задачи и действия сторон будут влиять на дальнейшие события.</p></article>
+        </div>
       </div>
     </section>
 
     <section class="final-cta">
       <div class="shell final-cta-inner">
-        <div><p class="section-code">Перед регистрацией</p><h2>Уже готов?</h2></div>
-        <a class="button button-primary" href="info.html">Открыть информацию <span>→</span></a>
+        <div><p class="section-code">Выбор сделан?</p><h2>Назови свою сторону.</h2></div>
+        <a class="button button-primary" href="register.html">Подать заявку <span>→</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell"><span>BLACK SIGNAL // LEGACY EVENTS</span><span>Публичный брифинг // Версия 04</span></div></footer>
+  <footer class="site-footer"><div class="shell"><span>BLACK SIGNAL // LEGACY EVENTS</span><span>Выбор стороны // Версия 05</span></div></footer>
 </body>
 </html>

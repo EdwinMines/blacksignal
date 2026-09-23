@@ -64,6 +64,18 @@
       ".brief-card > *",
       ".final-cta .section-code",
       ".final-cta h2"
+    ],
+    briefing: [
+      ".content-section .section-heading > *",
+      ".side-choice .section-code",
+      ".side-choice h2",
+      ".side-intro",
+      ".gameplay-loop > li",
+      ".fit-note > *",
+      ".side-action",
+      ".common-brief .brief-card > *",
+      ".final-cta .section-code",
+      ".final-cta h2"
     ]
   };
 
