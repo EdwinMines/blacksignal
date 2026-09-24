@@ -554,6 +554,56 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
   color: var(--accent);
 }
 
+.discord-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(88,101,242,.07), transparent 42%), #0b0d0d;
+}
+
+.discord-strip__inner {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.discord-strip__label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.discord-strip__label .status-dot {
+  flex: 0 0 auto;
+  background: #5865f2;
+  box-shadow: 0 0 14px rgba(88,101,242,.5);
+}
+
+.discord-strip__label strong,
+.discord-strip__label small {
+  display: block;
+  font-family: var(--mono);
+  text-transform: uppercase;
+}
+
+.discord-strip__label strong {
+  font-size: 14px;
+  letter-spacing: .06em;
+}
+
+.discord-strip__label small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .09em;
+}
+
+.discord-strip .button {
+  width: auto;
+  min-width: 205px;
+}
+
 .transmission {
   overflow: hidden;
   border-bottom: 1px solid rgba(239,125,59,.28);
@@ -1772,6 +1822,7 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
     grid-row: 2;
   }
 
+
   .transmission-inner {
     grid-template-columns: 1fr;
     padding-block: 24px;
@@ -2017,6 +2068,17 @@ body[data-page="home"].home-entering .hero-meta { transition-duration: .7s; tran
   }
 
   .registration-card__body .button {
+    width: 100%;
+  }
+
+  .discord-strip__inner {
+    min-height: 0;
+    padding-block: 22px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .discord-strip .button {
     width: 100%;
   }
 
