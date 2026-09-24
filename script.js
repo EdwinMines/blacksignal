@@ -130,7 +130,6 @@
     const renderStats = (data) => {
       const counts = data?.factions || {};
       const total = Number.isFinite(Number(data?.total)) ? Number(data.total) : 0;
-      const maxCount = Math.max(1, ...keys.map((key) => Number(counts[key]?.count) || 0));
       const totalField = statsRoot.querySelector('[data-stat="total"]');
       const capacityBar = statsRoot.querySelector('[data-bar="capacity"]');
       if (totalField) totalField.textContent = String(total);
@@ -141,7 +140,7 @@
         const field = statsRoot.querySelector(`[data-stat="${key}"]`);
         const bar = statsRoot.querySelector(`[data-bar="${key}"]`);
         if (field) field.textContent = String(count);
-        if (bar) bar.style.width = `${Math.max(count > 0 ? 4 : 0, (count / maxCount) * 100)}%`;
+        if (bar) bar.style.width = `${total > 0 ? Math.min(100, (count / total) * 100) : 0}%`;
       });
 
       setStatus("Актуальные данные", "ready");
