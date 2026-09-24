@@ -35,7 +35,7 @@
           <p>Заполните анкету участника. Ответы сохраняются через Google Forms, а распределение ролей будет опубликовано организаторами перед событием.</p>
           <dl>
             <div><dt>Сервер</dt><dd>Legacy EVENTS</dd></div>
-            <div><dt>Дата</dt><dd>10.10.2026</dd></div>
+            <div><dt>Дата и время</dt><dd>10.10.2026 // 15:00 UTC+3</dd></div>
             <div><dt>Формат</dt><dd>Односценный ивент</dd></div>
           </dl>
         </div>
@@ -56,6 +56,35 @@
             <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeEJxb2_rwWsOHyL_PJpQ3hlz3644FTc9c7sb5-82l4f2Mb8Q/viewform" target="_blank" rel="noopener">Открыть анкету <span>↗</span></a>
           </div>
         </div>
+
+        <section class="registration-stats" data-registration-stats data-endpoint="https://script.google.com/macros/s/AKfycbwKIbrm6loNioOR3aS_c6IDMuwUCfBCawTLfQnXDzD3SDL8itsCltqgksUVVeJTScEsjg/exec" aria-labelledby="registration-stats-title">
+          <div class="registration-stats__head">
+            <div>
+              <p class="section-code">Статистика регистрации</p>
+              <h2 id="registration-stats-title">Распределение участников</h2>
+            </div>
+            <div class="registration-total">
+              <span>Зарегистрировано</span>
+              <strong><b data-stat="total">—</b> / 100</strong>
+            </div>
+          </div>
+
+          <div class="registration-bars" aria-live="polite">
+            <div class="registration-bar" data-side="aegis">
+              <div><span>PMC // Aegis Response</span><strong data-stat="aegis">—</strong></div>
+              <i aria-hidden="true"><b data-bar="aegis"></b></i>
+            </div>
+            <div class="registration-bar" data-side="brodyagi">
+              <div><span>Выжившие // Бродяги</span><strong data-stat="brodyagi">—</strong></div>
+              <i aria-hidden="true"><b data-bar="brodyagi"></b></i>
+            </div>
+            <div class="registration-bar" data-side="morrow">
+              <div><span>PMC // Morrow Solutions</span><strong data-stat="morrow">—</strong></div>
+              <i aria-hidden="true"><b data-bar="morrow"></b></i>
+            </div>
+          </div>
+
+        </section>
       </div>
     </section>
   </main>

@@ -36,6 +36,7 @@
       ".situation .section-heading > *",
       ".situation-copy > *",
       ".data-grid > div > *",
+      ".home-registration-meter > *",
       ".corporate-record__body > *",
       ".factions-section .section-code",
       ".factions-section h2",
@@ -77,6 +78,12 @@
       ".common-brief .brief-card > *",
       ".final-cta .section-code",
       ".final-cta h2"
+    ],
+    register: [
+      ".registration-copy > *",
+      ".registration-card__body > *",
+      ".registration-stats__head > *",
+      ".registration-bar"
     ]
   };
 
@@ -108,6 +115,51 @@
       revealElements.forEach((element) => revealObserver.observe(element));
     }
   }
+
+  const statsRoots = Array.from(document.querySelectorAll("[data-registration-stats]"));
+  statsRoots.forEach((statsRoot) => {
+    const endpoint = statsRoot.dataset.endpoint?.trim();
+    const status = statsRoot.querySelector("[data-stats-status]");
+    const keys = ["aegis", "brodyagi", "morrow"];
+
+    const setStatus = (message, state) => {
+      if (status) status.textContent = message;
+      statsRoot.dataset.state = state;
+    };
+
+    const renderStats = (data) => {
+      const counts = data?.factions || {};
+      const total = Number.isFinite(Number(data?.total)) ? Number(data.total) : 0;
+      const maxCount = Math.max(1, ...keys.map((key) => Number(counts[key]?.count) || 0));
+      const totalField = statsRoot.querySelector('[data-stat="total"]');
+      const capacityBar = statsRoot.querySelector('[data-bar="capacity"]');
+      if (totalField) totalField.textContent = String(total);
+      if (capacityBar) capacityBar.style.width = `${Math.min(100, Math.max(0, total))}%`;
+
+      keys.forEach((key) => {
+        const count = Number(counts[key]?.count) || 0;
+        const field = statsRoot.querySelector(`[data-stat="${key}"]`);
+        const bar = statsRoot.querySelector(`[data-bar="${key}"]`);
+        if (field) field.textContent = String(count);
+        if (bar) bar.style.width = `${Math.max(count > 0 ? 4 : 0, (count / maxCount) * 100)}%`;
+      });
+
+      setStatus("Актуальные данные", "ready");
+    };
+
+    if (!endpoint) {
+      setStatus("Статистика недоступна", "unconfigured");
+    } else {
+      setStatus("Обновление…", "loading");
+      fetch(endpoint, { redirect: "follow", cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then(renderStats)
+        .catch(() => setStatus("Статистика временно недоступна.", "error"));
+    }
+  });
 
   const countdown = document.querySelector("[data-countdown]");
   if (!countdown) return;
