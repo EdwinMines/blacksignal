@@ -160,6 +160,82 @@
     }
   });
 
+  const decodeTargets = Array.from(document.querySelectorAll("[data-decode]"));
+  if (decodeTargets.length) {
+    const decodeGlyphs = "#%?+=/<>[]{}01ЖФЦШ";
+
+    const decodeText = (element, delay = 0) => {
+      if (element.dataset.decoded === "true") return;
+
+      const original = element.textContent;
+      element.dataset.decoded = "true";
+
+      if (reduceMotion) {
+        element.textContent = original;
+        element.classList.add("is-decoded");
+        return;
+      }
+
+      element.setAttribute("aria-label", original);
+      element.setAttribute("aria-busy", "true");
+      element.classList.add("is-decoding");
+
+      const characters = Array.from(original);
+      const revealable = characters.reduce((count, character) => count + (/\s/.test(character) ? 0 : 1), 0);
+      const duration = Math.min(1550, 420 + revealable * 18);
+      const start = performance.now() + delay;
+
+      const frame = (now) => {
+        const progress = Math.max(0, Math.min(1, (now - start) / duration));
+        const resolved = Math.floor(progress * revealable);
+        let seen = 0;
+
+        element.textContent = characters.map((character) => {
+          if (/\s/.test(character)) return character;
+          seen += 1;
+          if (seen <= resolved) return character;
+          if (/[^\p{L}\p{N}]/u.test(character)) return character;
+          return decodeGlyphs[Math.floor(Math.random() * decodeGlyphs.length)];
+        }).join("");
+
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+          return;
+        }
+
+        element.textContent = original;
+        element.classList.remove("is-decoding");
+        element.classList.add("is-decoded");
+        element.removeAttribute("aria-busy");
+        element.removeAttribute("aria-label");
+      };
+
+      requestAnimationFrame(frame);
+    };
+
+    const decodeGroup = (root) => {
+      const targets = root.matches("[data-decode]")
+        ? [root]
+        : Array.from(root.querySelectorAll("[data-decode]"));
+      targets.forEach((target, index) => decodeText(target, index * 110));
+    };
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      decodeTargets.forEach((target) => decodeText(target));
+    } else {
+      const decodeRoots = Array.from(document.querySelectorAll("[data-signal-record], .page-hero, .signal-console, .trader-directory article"));
+      const decodeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          decodeGroup(entry.target);
+          decodeObserver.unobserve(entry.target);
+        });
+      }, { threshold: .2, rootMargin: "0px 0px -8%" });
+
+      decodeRoots.forEach((root) => decodeObserver.observe(root));
+    }
+  }
+
   const countdown = document.querySelector("[data-countdown]");
   if (!countdown) return;
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0b0b">
-  <meta name="description" content="Архив перехваченных передач ретранслятора № 12.">
+  <meta name="description" content="Архив перехваченных передач ретранслятора № 12 и досье неизвестных торговых посредников.">
   <title>Архив сигналов — Чёрный сигнал</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -23,42 +23,115 @@
   <main id="main">
     <section class="page-hero">
       <div class="shell">
-        <p class="eyebrow">Архив 03 // Перехваченные сигналы</p>
-        <h1>Кто-то говорит<br>из мёртвой зоны</h1>
+        <p class="eyebrow" data-decode>Архив 04 // Перехваченные сигналы</p>
+        <h1><span data-decode>Кто-то говорит</span><br><span data-decode>из мёртвой зоны</span></h1>
         <p class="page-lead">Фрагменты восстановлены из повреждённого буфера ретранслятора № 12. Порядок сообщений подтверждён. Источник — нет.</p>
       </div>
     </section>
 
-    <section class="content-section">
-      <div class="shell signal-list">
-        <article class="signal-record">
-          <span class="signal-time">02:17:43 // Принято // Голос не установлен</span>
-          <h2>Запись 12-01</h2>
-          <blockquote>«Канал открыт. Объект двенадцать отвечает. Не отправляйте группу по северной дороге.»</blockquote>
-          <p><strong>Примечание:</strong> фоновый шум совпадает с работой турбин восточного энергоблока, остановленных одиннадцать месяцев назад.</p>
-        </article>
-        <article class="signal-record">
-          <span class="signal-time">02:41:09 // Повреждено // Восстановлено 61%</span>
-          <h2>Запись 12-02</h2>
-          <blockquote>«Архив не внутри сервера. Сервер — это замок. Ключ уже вынесли, но [фрагмент утрачен] всё ещё здесь.»</blockquote>
-          <p><strong>Примечание:</strong> в момент передачи система зарегистрировала карту доступа инженера Маркова.</p>
-        </article>
-        <article class="signal-record">
-          <span class="signal-time">03:06:22 // Зашифровано // Ключ 12-BLACK</span>
-          <h2>Запись 12-03</h2>
-          <blockquote>«Aegis получит людей. Morrow получит имена. Местные получат правду. Никто не должен получить всё.»</blockquote>
-          <p><strong>Примечание:</strong> названия групп прозвучали до того, как их операции были утверждены.</p>
-        </article>
-        <article class="signal-record">
-          <span class="signal-time">03:19:00 // Исходящее // Адресат: все группы</span>
-          <h2>Запись 12-04</h2>
-          <blockquote>«Вы ищете того, кто включил сигнал. Сначала спросите, кто его выключил.»</blockquote>
-          <p><strong>Статус:</strong> передача отправлена из закрытого сектора через одиннадцать месяцев после уничтожения объекта.</p>
-        </article>
+    <section class="signal-console-section" aria-label="Состояние архива">
+      <div class="shell signal-console">
+        <div><span>Канал</span><strong data-decode>12 // BLACK</strong></div>
+        <div><span>Восстановлено</span><strong data-decode>7 фрагментов</strong></div>
+        <div><span>Новый трафик</span><strong data-decode>3 посредника</strong></div>
+        <p><span class="signal-pulse" aria-hidden="true"></span> Дешифровка активна</p>
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section signal-archive">
+      <div class="shell">
+        <header class="signal-section-head">
+          <p class="section-code">Пакет 01 // Восстановленный архив</p>
+          <h2>Передачи до открытия канала</h2>
+        </header>
+        <div class="signal-list">
+        <article class="signal-record" data-signal-record>
+          <span class="signal-index" aria-hidden="true">01</span>
+          <span class="signal-time" data-decode>02:17:43 // Принято // Голос не установлен</span>
+          <h2 data-decode>Запись 12-01</h2>
+          <blockquote data-decode>«Канал открыт. Объект двенадцать отвечает. Не отправляйте группу по северной дороге.»</blockquote>
+          <p><strong>Примечание:</strong> фоновый шум совпадает с работой турбин восточного энергоблока, остановленных одиннадцать месяцев назад.</p>
+        </article>
+        <article class="signal-record" data-signal-record>
+          <span class="signal-index" aria-hidden="true">02</span>
+          <span class="signal-time" data-decode>02:41:09 // Повреждено // Восстановлено 61%</span>
+          <h2 data-decode>Запись 12-02</h2>
+          <blockquote data-decode>«Архив не внутри сервера. Сервер — это замок. Ключ уже вынесли, но [фрагмент утрачен] всё ещё здесь.»</blockquote>
+          <p><strong>Примечание:</strong> в момент передачи система зарегистрировала карту доступа инженера Маркова, выданную Veyridian Group.</p>
+        </article>
+        <article class="signal-record" data-signal-record>
+          <span class="signal-index" aria-hidden="true">03</span>
+          <span class="signal-time" data-decode>03:06:22 // Зашифровано // Ключ 12-BLACK</span>
+          <h2 data-decode>Запись 12-03</h2>
+          <blockquote data-decode>«Aegis получит людей. Morrow получит имена. Местные получат правду. Никто не должен получить всё.»</blockquote>
+          <p><strong>Примечание:</strong> названия групп прозвучали до того, как их операции были утверждены.</p>
+        </article>
+        <article class="signal-record" data-signal-record>
+          <span class="signal-index" aria-hidden="true">04</span>
+          <span class="signal-time" data-decode>03:19:00 // Исходящее // Адресат: все группы</span>
+          <h2 data-decode>Запись 12-04</h2>
+          <blockquote data-decode>«Вы ищете того, кто включил сигнал. Сначала спросите, кто его выключил.»</blockquote>
+          <p><strong>Статус:</strong> передача отправлена из закрытого сектора через одиннадцать месяцев после уничтожения объекта. Техническая подпись совпадает с внутренней сетью Veyridian Group.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section trader-section">
+      <div class="shell">
+        <header class="signal-section-head signal-section-head--traders">
+          <div>
+            <p class="section-code">Пакет 02 // Неучтённые частоты</p>
+            <h2>Три голоса торгуют внутри периметра</h2>
+          </div>
+          <p>Ни одного подтверждённого контакта с прибывающими PMC ещё не было. Но трое местных уже обсуждают чужие нашивки, возможные сделки и цену первой встречи.</p>
+        </header>
+
+        <div class="trader-directory" aria-label="Обнаруженные посредники">
+          <article>
+            <span>Контакт 01 // Интерес: Aegis</span>
+            <h3 data-decode>«Миротворец»</h3>
+            <p>Неизвестный оператор защищённого канала. Собирает координаты, разведданные и сведения о тех, кто приближается к зоне.</p>
+          </article>
+          <article>
+            <span>Контакт 02 // Интерес: Morrow</span>
+            <h3 data-decode>«Прапор»</h3>
+            <p>Местный поставщик оружия и деталей. Уже готовит расценки для Morrow, хотя ни одного их бойца ещё не видел.</p>
+          </article>
+          <article>
+            <span>Контакт 03 // Бродяги</span>
+            <h3 data-decode>«Сеньор»</h3>
+            <p>Знакомый Бродягам торговец припасами. К встрече с PMC относится как к новой возможности — и новой опасности.</p>
+          </article>
+        </div>
+
+        <div class="signal-list signal-list--traders">
+          <article class="signal-record signal-record--trader" data-signal-record>
+            <span class="signal-index" aria-hidden="true">05</span>
+            <span class="signal-time" data-decode>03:27:14 // Торговый канал 01 // Ответ не получен</span>
+            <h2 data-decode>Запись 12-05 // Миротворец</h2>
+            <blockquote data-decode>«Если люди с эмблемой Aegis действительно идут сюда, пусть сначала покажут, чего стоит их контракт. Сделку предложу, когда увижу их своими глазами.»</blockquote>
+            <p><strong>Примечание:</strong> передача направлена в сторону маршрута Aegis. Ответа не зафиксировано; личность отправителя группе неизвестна.</p>
+          </article>
+          <article class="signal-record signal-record--trader" data-signal-record>
+            <span class="signal-index" aria-hidden="true">06</span>
+            <span class="signal-time" data-decode>03:33:51 // Торговый канал 02 // Условия не приняты</span>
+            <h2 data-decode>Запись 12-06 // Прапор</h2>
+            <blockquote data-decode>«Говорят, Morrow прислали серьёзных людей. Посмотрим. Если принесут рабочие детали и не станут задавать лишних вопросов — может, договоримся.»</blockquote>
+            <p><strong>Примечание:</strong> обращение составлено до входа Morrow в периметр. Прямых переговоров между сторонами не зарегистрировано.</p>
+          </article>
+          <article class="signal-record signal-record--trader" data-signal-record>
+            <span class="signal-index" aria-hidden="true">07</span>
+            <span class="signal-time" data-decode>03:48:06 // Торговый канал 03 // Разговор местных</span>
+            <h2 data-decode>Запись 12-07 // Сеньор</h2>
+            <blockquote data-decode>«Две группы чужаков сразу? Прекрасно. Посмотрим, кто первым поймёт местные цены. Только предупредите своих: здесь красивые нашивки ничего не стоят.»</blockquote>
+            <p><strong>Примечание:</strong> Сеньор известен Бродягам, однако его возможные условия для PMC остаются неизвестными.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section signal-endnote">
       <div class="shell notice"><p><strong>Архив будет обновляться.</strong> Новые перехваты и восстановленные фрагменты появятся по мере приближения события.</p></div>
     </section>
   </main>
